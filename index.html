@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
-    <script src="main.js" type="text/javascript"></script>
     <title>Nollbricka</title>
 </head>
 <body>
-    <h1>Nollbricka</h1>
-    <p>Har DNollK rivit din bricka <i>igen</i>? Välj storlek (och ifall du vill se avrundade värden) så visar vi vilka mått som din nya nollbricka ska ha!</p>
+<h1>Nollbricka</h1>
+<p>Har DNollK rivit din bricka <i>igen</i>? Välj storlek (och ifall du vill se avrundade värden) så visar vi vilka mått som din nya nollbricka ska ha!</p>
+<main>
+    <div class="noll-image">
+        <img src="/assets/named-base.svg" alt="Nollbricka" />
+    </div>
+    <div class="selection">
+        <h2>Measurements</h2>
+        <div>
+            <label for="number-selector">Nollbricka number</label>
+            <select id="number-selector">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <label>Round values</label>
+        <div class="fancy-toggle" id="round-selector">
+            <div class="fancy-toggle-input">
+                <label for="round-selector-1">True</label>
+                <input id="round-selector-1" type="radio" name="round" value="true">
+            </div>
+            <div class="fancy-toggle-input active">
+                <label for="round-selector-2">False</label>
+                <input id="round-selector-2" type="radio" name="round" value="false">
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="main.js" type="text/javascript"></script>
 </body>
 </html>
