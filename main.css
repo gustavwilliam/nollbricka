@@ -67,6 +67,7 @@ h2 {
 
 main {
     display: flex;
+    flex-wrap: wrap-reverse;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #ddd;
@@ -75,19 +76,26 @@ main {
 }
 main > div {
     padding: 2rem;
-    border-left: 1px solid #ddd;
-    width: 100%;
+    border-left: 1px solid #ddd; /*TODO: only display when not wrapped*/
+    border-bottom:  1px solid #ddd; /*TODO: only display when wrapped*/
+    flex-grow: 1;
 }
 main > div:first-child {
     border-left: 0;
+    border-bottom: 0;
     background-color: #fbfbfb;
 }
 
 .noll-image {
-    width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
     object-fit: contain;
     object-position: center;
+}
+.noll-image > img {
+    max-width: 400px;
+    width: 100%;
 }
 
 .select-group {
