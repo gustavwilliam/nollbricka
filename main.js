@@ -12,7 +12,7 @@ const scales = {
 }
 
 let options = {
-  "rounded": false,
+  "rounded": true,
   "number": 1,
   "scale": 1,
 }
@@ -44,7 +44,7 @@ const roundedDimensions = {
 }
 
 roundSelector.addEventListener("change", (event) => {
-  options.rounded = event.target.value;
+  options.rounded = event.target.value === "true"
   roundSelector.firstElementChild.classList.toggle("active");
   roundSelector.lastElementChild.classList.toggle("active");
   updateValueTable();
@@ -94,8 +94,10 @@ const updateValueTable = () => {
   for (const row of rows) {
     row.lastElementChild.innerText = getDimension(
       row.id,
-      options.rounded === "true",
+      options.rounded,
       options.scale,
     )
   }
 }
+
+window.onload = updateValueTable
