@@ -14,26 +14,48 @@
     </div>
     <div class="selection">
         <h2>Measurements</h2>
-        <div>
-            <label for="number-selector">Nollbricka number</label>
-            <select id="number-selector">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+        <div class="double-select">
+            <div class="select-group">
+                <label for="number-selector">Nollbricka number</label>
+                <select id="number-selector" class="fancy-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="scale-selector">Scale</label>
+                <input id="scale-selector" type="number" min="1" value="1">
+            </div>
         </div>
-        <label>Round values</label>
-        <div class="fancy-toggle" id="round-selector">
-            <div class="fancy-toggle-input">
-                <label for="round-selector-1">True</label>
-                <input id="round-selector-1" type="radio" name="round" value="true">
+        <div class="select-group">
+            <label>Round values</label>
+            <div class="fancy-toggle" id="round-selector">
+                <div class="fancy-toggle-input">
+                    <label for="round-selector-1">True</label>
+                    <input id="round-selector-1" type="radio" name="round" value="true">
+                </div>
+                <div class="fancy-toggle-input active">
+                    <label for="round-selector-2">False</label>
+                    <input id="round-selector-2" type="radio" name="round" value="false">
+                </div>
             </div>
-            <div class="fancy-toggle-input active">
-                <label for="round-selector-2">False</label>
-                <input id="round-selector-2" type="radio" name="round" value="false">
-            </div>
+        </div>
+        <div class="table-container">
+            <table id="value-table">
+                <tr id="height"><td>height</td><td>140.001</td></tr>
+                <tr id="width"><td>width</td><td>81.00</td></tr>
+                <tr id="square width"><td>square width</td><td>10.125</td></tr>
+                <tr id="square height"><td>square height</td><td>4</td></tr>
+                <tr id="name space"><td>name space</td><td>14.00</td></tr>
+                <tr id="top margin"><td>top margin</td><td>21.01</td></tr>
+                <tr id="top offset"><td>top offset</td><td>5.52</td></tr>
+                <tr id="corner radius"><td>corner radius</td><td>16.01</td></tr>
+                <tr id="nollan inside"><td>nollan inside</td><td>19.99</td></tr>
+                <tr id="nollan width"><td>nollan width</td><td>10.00</td></tr>
+            </table>
         </div>
     </div>
 </main>

@@ -3,6 +3,7 @@ body {
 }
 h2 {
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .fancy-toggle {
@@ -19,6 +20,7 @@ h2 {
     border-radius: 4px;
     overflow: hidden;
     text-align: center;
+    padding: 4px;
 }
 .fancy-toggle-input.active {
     background-color: white;
@@ -29,15 +31,37 @@ h2 {
 }
 .fancy-toggle-input label {
     flex-grow: 1;
-    padding: 4px;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .fancy-toggle-input label:hover {
     cursor: pointer;
 }
 .fancy-toggle-input.active label:hover {
     cursor: default;
+}
+
+.fancy-select {
+    background-color: #eee;
+    border-radius: 8px 0 0 8px;
+    border: 0;
+    padding: 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+#scale-selector {
+    background-color: #eee;
+    border-radius: 0 8px 8px 0;
+    border: 0;
+    padding: 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
 }
 
 main {
@@ -63,4 +87,47 @@ main > div:first-child {
     max-width: 400px;
     object-fit: contain;
     object-position: center;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+.select-group label {
+    margin-bottom: 5px;
+}
+
+.double-select {
+    display: flex;
+    flex-direction: row;
+}
+.double-select > div {
+    flex-grow: 1;
+}
+.double-select > div:first-of-type {
+    margin-right: 5px;
+}
+
+.table-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin: 0;
+}
+td:first-of-type {
+    font-weight: 500;
+}
+td:last-of-type {
+    color: #333;
 }
