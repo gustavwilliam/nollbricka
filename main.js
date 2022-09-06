@@ -6,9 +6,9 @@ const valueTable = document.getElementById("value-table")
 const scales = {
   1: 1,
   2: 2,
-  3: Math.PI,
-  4: 4, //TODO: update to correct value
-  5: 5, //TODO: update to correct value
+  3: 3.14159265359,
+  4: 4.22760354337,
+  5: 5.02247313354,
 }
 
 let options = {
@@ -21,7 +21,7 @@ const baseDimensions = {
   "height": 140.001,
   "width": 81.00,
   "square width": 10.125,
-  "square height": 2.028 * Math.PI^2,
+  "square height": 20.0155577254,
   "name space": 14.00,
   "top margin": 21.01,
   "top offset": 5.52,
@@ -34,7 +34,7 @@ const roundedDimensions = {
   "height": 140,
   "width": 80,
   "square width": 10,
-  "square height": 4,
+  "square height": 20,
   "name space": 14,
   "top margin": 21,
   "top offset": 6,
