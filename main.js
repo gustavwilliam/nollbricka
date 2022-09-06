@@ -57,12 +57,7 @@ numberSelector.addEventListener("change", (event) => {
   updateValueTable();
 })
 scaleSelector.addEventListener("change", (event) => {
-  let scale;
-  try {
-    scale = parseInt(event.target.value);
-  } catch {
-    scale = parseFloat(event.target.value)
-  }
+  const scale = parseFloat(event.target.value)
   options.scale = scale;
   const number = Object.keys(scales).find(key => scales[key] === scale)
   if (number !== undefined) {
