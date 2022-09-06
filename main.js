@@ -30,16 +30,31 @@ const baseDimensions = {
   "nollan width": 10.00,
 }
 
+const roundedDimensions = {
+  "height": 140,
+  "width": 80,
+  "square width": 10,
+  "square height": 4,
+  "name space": 14,
+  "top margin": 21,
+  "top offset": 6,
+  "corner radius": 16,
+  "nollan inside": 20,
+  "nollan width": 10,
+}
+
 roundSelector.addEventListener("change", (event) => {
   options.rounded = event.target.value;
   roundSelector.firstElementChild.classList.toggle("active");
   roundSelector.lastElementChild.classList.toggle("active");
+  updateValueTable();
 })
 numberSelector.addEventListener("change", (event) => {
   if (event.target.value === "custom") return
   options.number = parseInt(event.target.value);
   options.scale = scales[options.number];
   scaleSelector.value = options.scale;
+  updateValueTable();
 })
 scaleSelector.addEventListener("change", (event) => {
   let scale;
@@ -56,8 +71,31 @@ scaleSelector.addEventListener("change", (event) => {
   } else {
     numberSelector.value = "custom";
   }
+  updateValueTable();
 })
 
-const fillValueTable = () => {
+const getDimension = (id, round, scale) => {
+  if (round) {
+    switch (id) {
+      case "square width":
+        return Math.round(getDimension("width", round, scale) / 8 * 10) / 10
+      case "width":
+        return Math.round(roundedDimensions["width"] * scale)
+      default:
+        return Math.round(roundedDimensions[id] * scale)
+    }
+  } else {
+    return (baseDimensions[id] * scale)
+  }
+}
 
+const updateValueTable = () => {
+  const rows = valueTable.querySelectorAll("tr")
+  for (const row of rows) {
+    row.lastElementChild.innerText = getDimension(
+      row.id,
+      options.rounded === "true",
+      options.scale,
+    )
+  }
 }
