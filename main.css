@@ -110,18 +110,19 @@ main > div:first-child {
 }
 
 .table-container {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
+    margin-top: 30px;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
 }
-
 th, td {
-    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 8px;
     margin: 0;
 }
@@ -130,4 +131,14 @@ td:first-of-type {
 }
 td:last-of-type {
     color: #333;
+    text-align: right;
+}
+tr:first-of-type td {
+    border-top: 0;
+}
+tr:last-of-type td {
+    border-bottom: 0;
+}
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }
